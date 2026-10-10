@@ -1,6 +1,12 @@
+import { useState } from 'react'
+import Auth from './Auth'
 import './App.css'
 
-function App() {
+function App() {  const [showAuth, setShowAuth] = useState(false)
+
+          if (showAuth) {
+              return <Auth onBack={() => setShowAuth(false)} />
+                
   return (
       <div className="app">
             <header className="navbar">
@@ -17,8 +23,12 @@ function App() {
                                                                                                         </nav>
 
                                                                                                                 <div className="nav-actions">
-                                                                                                                          <button className="login-btn">Log in</button>
-                                                                                                                                    <button className="signup-btn">Get Started ↗</button>
+                                                                                                                          <button className="login-btn" onClick={() => setShowAuth(true)}>
+                                                                                                                                  Log in
+                                                                                                                                  </button>
+                                                                                                                                    <button className="signup-btn" onClick={() => setShowAuth(true)}>
+                                                                                                                                          Get Started ↗
+                                                                                                                                          </button>
                                                                                                                                             </div>
                                                                                                                                                   </header>
 
@@ -42,7 +52,9 @@ function App() {
                                                                                                                                                                                                                                                                                                                                                     </p>
 
                                                                                                                                                                                                                                                                                                                                                                 <div className="hero-actions">
-                                                                                                                                                                                                                                                                                                                                                                              <button className="primary-btn">
+                                                                                                                                                                                                                                                                                                                                                                              <button className="primary-btn" onClick={() => setShowAuth(true)}>
+                                                                                                                                                                                                                                                                                                                                                                                  Explore NexaWealth <span>↗</span>
+                                                                                                                                                                                                                                                                                                                                                                                  </button>
                                                                                                                                                                                                                                                                                                                                                                                               Explore NexaWealth <span>↗</span>
                                                                                                                                                                                                                                                                                                                                                                                                             </button>
 
